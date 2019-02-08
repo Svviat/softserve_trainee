@@ -4,9 +4,9 @@ import os
 
 
 class Getter:
-    def __init__(self, URL):
+    def __init__(self, URL, DIR_PATH="data100"):
         self.URL = URL
-        self.DIR_PATH = 'data'
+        self.DIR_PATH = DIR_PATH
 
     def get_file(self):
         for url in self.URL:
@@ -21,6 +21,5 @@ class Getter:
 
 
 if __name__ == "__main__":
-    ALLURL = 'https://drive.google.com/uc?export=download&id=1Z_ZNiCTmNeCurEkJKdSdrAcPhOJmR5_U', 'https://drive.google.com/uc?export=download&id=1XhHv7dlUFtTJH8YKGFus0jGPKGmuk6_w'
-    get = Getter(URL=[x for x in ALLURL])
+    get = Getter(['https://drive.google.com/uc?export=download&id=1Z_ZNiCTmNeCurEkJKdSdrAcPhOJmR5_U', 'https://drive.google.com/uc?export=download&id=1XhHv7dlUFtTJH8YKGFus0jGPKGmuk6_w'])
     get.get_file()
